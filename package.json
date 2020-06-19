@@ -1,0 +1,11 @@
+{
+  "name": "vk-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/baomastr/vk_standalone.git",
+  "author": "d.lisyanskiy <d.lisyanskiy@tinkoff.ru>",
+  "license": "MIT",
+  "scripts": {
+    "publish": "git checkout gh-pages && git merge master && git commit -am 'Deploy' && git push origin gh-pages && git checkout @{-1}"
+  }
+}
