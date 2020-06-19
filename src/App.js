@@ -5,20 +5,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <a href="https://oauth.vk.com/authorize?client_id=7516065&redirect_uri=https%3A%2F%2Fbaomastr.github.io%2Fvk_standalone%2F">AUTH</a>
     </div>
   );
 }
