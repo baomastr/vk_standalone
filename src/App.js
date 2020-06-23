@@ -11,6 +11,10 @@ let vkApi = new VK({
 });
 
 function App() {
+  const [postLink, setPostLink] = useState('');
+  const [commentText, setCommentText] = useState('');
+  const [commentParams, setCommentParams] = useState({});
+
   const createComment = () => {
     if (!vkApi) {
       return
@@ -24,10 +28,6 @@ function App() {
     );
   };
 
-  const [postLink, setPostLink] = useState('');
-  const [commentText, setCommentText] = useState('');
-  const [commentParams, setCommentParams] = useState({});
-
   useEffect(()=>{
     if (postLink) {
       try {
@@ -37,15 +37,14 @@ function App() {
       } catch (e) {
         console.error(e);
       }
-
     }
   }, [postLink]);
 
   return (
     <div className="App">
-      <input type="text" value={postLink} placeholder="ссылка на пост" onChange={({currentTarget}) => setPostLink(currentTarget.value)}/>
+      <input type="text" value={postLink} placeholder="ссылка на пост" onChange={({currentTarget: {value}}) => setPostLink(value)}/>
       <br/>
-      <input type="text" value={commentText} placeholder="комментарий" onChange={({currentTarget}) => setCommentText(currentTarget.value)}/>
+      <input type="text" value={commentText} placeholder="комментарий" onChange={({currentTarget: {value}}) => setCommentText(value)}/>
       <br/><br/><br/>
       <button onClick={createComment}>send comment</button>
     </div>
